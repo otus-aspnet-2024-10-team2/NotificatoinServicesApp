@@ -1,6 +1,17 @@
-﻿namespace WebApi.Extensions;
+﻿using Infrastructure.Repositories.Implementations;
+using Services.Abstractions;
+using Services.Implementations;
+using Services.Repositories;
 
-public class NotificationConfigurationExtensions
+namespace WebApi.Extensions;
+
+public static class NotificationConfigurationExtensions
 {
-    
+    public static IServiceCollection AddDependecyGroup(this IServiceCollection services)
+    {
+        services
+            .AddTransient<INotificationService, NotificationService>()
+            .AddTransient<INotificationRepository, NotificationRepository>();
+        return services;
+    }
 }

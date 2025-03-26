@@ -8,6 +8,6 @@ public interface INotificationService
     /// Получить произвольный ID уведомления
     /// </summary>
     /// <returns></returns>
-    Task<NotificationDefaultIdDto> GetDefaultIdAsync();
+    Task<int> GetDefaultIdAsync();
     
 }

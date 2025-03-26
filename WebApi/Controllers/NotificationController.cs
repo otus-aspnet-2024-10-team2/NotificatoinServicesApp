@@ -9,12 +9,12 @@ namespace WebApi.Controllers;
 public class NotificationController : ControllerBase
 {
     private readonly INotificationService _notificationService;
-    private readonly IMapper _mapper;
+    //private readonly IMapper _mapper;
 
-    public NotificationController(INotificationService notificationService, IMapper mapper)
+    public NotificationController(INotificationService notificationService/*, IMapper mapper*/)
     {
         _notificationService = notificationService ?? throw new ArgumentNullException(nameof(notificationService));
-        _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+      //  _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
     
     /// <summary>

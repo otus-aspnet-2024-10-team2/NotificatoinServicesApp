@@ -1,6 +1,6 @@
 ﻿namespace Core.Entity;
 
-public class Notification
+public class Notification : IEntity<int>
 {
     /// <summary>
     /// Идинтификатор

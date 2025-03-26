@@ -1,6 +1,9 @@
-﻿namespace Services.Repositories;
+﻿
+using Core.Entity;
 
-public interface INotificationRepository
+namespace Services.Repositories;
+
+public interface INotificationRepository : IRepository<Notification, int>
 {
     /// <summary>
     /// Получить произвольный ИД уведомления

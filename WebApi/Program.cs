@@ -1,9 +1,11 @@
 using Core.Entity;
+using Infrastructure.EF;
 using Infrastructure.Repositories.Implementations;
 using Microsoft.OpenApi.Models;
 using Services.Abstractions;
 using Services.Implementations;
 using Services.Repositories;
+using WebApi.Controllers;
 using WebApi.Extensions;
 
 namespace WebApi;
@@ -13,19 +15,20 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-        builder.Services.AddEndpointsApiExplorer();
+        var services = builder.Services;
+        services.AddControllers();
+        services.AddScoped<INotificationService, NotificationService>();
+        services.ConfigurationContext(builder.Configuration.GetConnectionString("DefaultConnection"));
+        services.AddTransient<INotificationRepository, NotificationRepository>();
+        services.AddAuthorization();
+        services.AddEndpointsApiExplorer();
 
-        // builder.Services.AddDependecyGroup();
-        builder.Services.AddControllers();
-        builder.Services.AddTransient<INotificationService, NotificationService>();
-        builder.Services.AddTransient<INotificationRepository, NotificationRepository>();
-        
         builder.Services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo{Title = "NotificationApp", Version = "v1"});
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "NotificationApp", Version = "v1" });
         });
         builder.Services.AddOpenApi();
-        
+
         var app = builder.Build();
 
         if (app.Environment.IsDevelopment())
@@ -44,7 +47,7 @@ public class Program
             });
         }
         app.UseRouting();
-        
+         
         app.UseAuthorization();
 
         app.MapControllers();

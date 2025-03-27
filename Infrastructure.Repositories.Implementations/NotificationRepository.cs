@@ -19,4 +19,5 @@ public class NotificationRepository : Repository<Notification, Guid>, INotificat
         var query = Context.Set<Notification>().AsQueryable();
         return query.SingleOrDefaultAsync(x => x.Id == id, token);
     }
+    
 }

@@ -34,31 +34,31 @@ public class Notification : IEntity<Guid>
     /// </summary>
     public NotificationType TypeNotification { get; set; }
 
-    public Notification( string title, string description,
-        DateTime dateCreated)
-    {
-        if (string.IsNullOrWhiteSpace(title))
-            throw new NotificationException(TypeExceptions.IsEmptyTitle);
-
-        if (string.IsNullOrWhiteSpace(description))
-            throw new NotificationException(TypeExceptions.IsEmptyDescription);
-
-        if (!CheckDateCreated(dateCreated))
-            throw new NotificationException(TypeExceptions.IsUncorrectDateCreated);
-        
-        Title = title;
-        Description = description;
-        DateCreated = dateCreated;
-    }
-
-    /// <summary>
-    /// Проверка на коррекность времени создания.  
-    /// </summary>
-    /// <param name="dateCreated">Дата создания, по умолчанию, текущая дата</param>
-    /// <returns></returns>
-    private bool CheckDateCreated(DateTime dateCreated)
-    {
-        return (dateCreated >= DateTime.Now.AddDays(-7)) 
-               && dateCreated <= DateTime.Now.Date ? true : false;
-    }
+    // public Notification( string title, string description,
+    //     DateTime dateCreated)
+    // {
+    //     if (string.IsNullOrWhiteSpace(title))
+    //         throw new NotificationException(TypeExceptions.IsEmptyTitle);
+    //
+    //     if (string.IsNullOrWhiteSpace(description))
+    //         throw new NotificationException(TypeExceptions.IsEmptyDescription);
+    //
+    //     if (!CheckDateCreated(dateCreated))
+    //         throw new NotificationException(TypeExceptions.IsUncorrectDateCreated);
+    //     
+    //     Title = title;
+    //     Description = description;
+    //     DateCreated = dateCreated;
+    // }
+    //
+    // /// <summary>
+    // /// Проверка на коррекность времени создания.  
+    // /// </summary>
+    // /// <param name="dateCreated">Дата создания, по умолчанию, текущая дата</param>
+    // /// <returns></returns>
+    // private bool CheckDateCreated(DateTime dateCreated)
+    // {
+    //     return (dateCreated >= DateTime.Now.AddDays(-7)) 
+    //            && dateCreated <= DateTime.Now.Date ? true : false;
+    // }
 }

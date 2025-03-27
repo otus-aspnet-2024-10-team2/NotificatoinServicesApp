@@ -17,16 +17,22 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         var services = builder.Services;
         services.AddControllers();
+        //найтрока automapper'a
+        services.InstallAutomapper();
+        //DI
         services.AddScoped<INotificationService, NotificationService>();
-        services.ConfigurationContext(builder.Configuration.GetConnectionString("DefaultConnection"));
         services.AddTransient<INotificationRepository, NotificationRepository>();
+        services.ConfigurationContext(builder.Configuration.GetConnectionString("SqliteConnection"));
+        
         services.AddAuthorization();
         services.AddEndpointsApiExplorer();
-
-        builder.Services.AddSwaggerGen(c =>
+        //Swager
+        services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "NotificationApp", Version = "v1" });
         });
+        
+        services.AddCors();
         builder.Services.AddOpenApi();
 
         var app = builder.Build();

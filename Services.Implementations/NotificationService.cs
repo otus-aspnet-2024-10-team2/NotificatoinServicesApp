@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Core.Entity;
 using Services.Abstractions;
+using Services.Contracts.Notification;
 using Services.Contracts.NotificationDto;
 using Services.Repositories;
 
@@ -7,19 +9,14 @@ namespace Services.Implementations;
 
 public class NotificationService : INotificationService 
 {
-    //private readonly INotificationRepository _notificationRepository;
-    //private readonly INotificationRepository _service = service ;
-
     private readonly INotificationRepository _service;
-
-    public NotificationService(INotificationRepository repository)
+    private readonly IMapper _mapper;
+    public NotificationService(INotificationRepository repository,
+        IMapper mapper)
     {
         _service = repository;
+        _mapper = mapper;
     }
-
-
-    //private readonly IMapper _mapper = mapper  ?? throw new ArgumentNullException(nameof(mapper));
-    //private readonly IUnitOfWork unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
 
     /// <summary>
     /// Получить произвольный ИД для уведомления
@@ -27,10 +24,49 @@ public class NotificationService : INotificationService
     /// <returns></returns>
     public async Task<Guid> GetDefaultIdAsync()
     {
-        // var defaultId = await _notificationRepository.GetDefaultIdAsync();
         var defaultId = await _service.GetDefaultIdAsync();
-        //return _mapper.Map<int, NotificationDefaultIdDto>(defaultId);
-        //return _mapper.Map<NotificationDefaultIdDto>(defaultId);
         return defaultId;
+    }
+
+    /// <summary>
+    /// Получить уведомление 
+    /// </summary>
+    /// <param name="id">GUID уведомления</param>
+    /// <returns>ДТО уведомления</returns>
+    public async Task<NotificationDto> GetNotificationByIdAsync(Guid id)
+    {
+        var notification = await _service.GetAsync(id);
+        return _mapper.Map<Notification, NotificationDto>(notification);
+    }
+    
+    /// <summary>
+    /// Добавить уведомление в БД
+    /// </summary>
+    /// <param name="createNotificationDto"></param>
+    /// <returns></returns>
+    public async Task<Guid> CreateNewNotificationAsync(CreateNotificationDto createNotificationDto)
+    {
+        var notification = _mapper.Map<CreateNotificationDto, Notification>(createNotificationDto);
+        var createdNotification = await _service.AddAsync(notification);
+        await _service.SaveChangesAsync();
+        return notification.Id;
+    }
+    
+    /// <summary>
+    /// Обновить сведенения по уведомлению
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="updateNotificationDto"></param>
+    /// <exception cref="Exception"></exception>
+    public async Task UpdateNotificationAsync(Guid id, UpdateNotificationDto updateNotificationDto)
+    {
+        var notification = await _service.GetAsync(id);
+        if (notification is null)
+            throw new Exception($"Уведомление № {id}, не найдено");
+        notification.TypeNotification = updateNotificationDto.TypeNotification;
+        notification.Description = updateNotificationDto.Description;
+        notification.Title = updateNotificationDto.Title;
+        _service.Update(notification);
+        await _service.SaveChangesAsync();
     }
 }

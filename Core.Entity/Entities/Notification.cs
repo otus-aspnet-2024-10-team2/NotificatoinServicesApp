@@ -27,12 +27,12 @@ public class Notification : IEntity<Guid>
     public DateTime? DateSended { get; set; }
     /// <summary>
     /// Признак рассылки
-    /// </summary>
-    public bool Sending { get; set; }
+    /// </summary> 
+    public bool Sending { get; set; } = false;
     /// <summary>
     /// Тип рассылки
     /// </summary>
-    public IEnumerable<NotificationType> TypeNotification { get; set; }
+    public NotificationType TypeNotification { get; set; }
 
     public Notification( string title, string description,
         DateTime dateCreated)

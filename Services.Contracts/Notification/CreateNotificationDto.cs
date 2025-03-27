@@ -1,8 +1,10 @@
 ﻿using Core.Entity;
 
 namespace Services.Contracts.Notification;
-
-public class NotificationDto : IEntity<Guid>
+/// <summary>
+/// ДТО для создания уведомления
+/// </summary>
+public class CreateNotificationDto : IEntity<Guid>
 {
     /// <summary>
     /// Идинтификатор
@@ -20,14 +22,6 @@ public class NotificationDto : IEntity<Guid>
     /// Дата создания, по умолчанию - текущая дата
     /// </summary>
     public DateTime DateCreated { get; set; } = DateTime.Now;
-    /// <summary>
-    /// Дата рассылки
-    /// </summary>
-    public DateTime? DateSended { get; set; }
-    /// <summary>
-    /// Признак рассылки
-    /// </summary> 
-    public bool Sending { get; set; } = false;
     /// <summary>
     /// Тип рассылки
     /// </summary>

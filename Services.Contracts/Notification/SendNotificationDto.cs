@@ -2,7 +2,7 @@
 
 namespace Services.Contracts.Notification;
 
-public class NotificationDto : IEntity<Guid>
+public class SendNotificationDto
 {
     /// <summary>
     /// Идинтификатор
@@ -16,10 +16,6 @@ public class NotificationDto : IEntity<Guid>
     /// Текст уведомления
     /// </summary>
     public string Description { get; set; }
-    /// <summary>
-    /// Дата создания, по умолчанию - текущая дата
-    /// </summary>
-    public DateTime DateCreated { get; set; } = DateTime.Now;
     /// <summary>
     /// Дата рассылки
     /// </summary>

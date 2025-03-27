@@ -7,16 +7,28 @@
       "RelativeMoniker": "D:0:0:{FBCE9DB3-3760-4A61-8292-A4A07D312BC2}|WebApi\\WebApi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FBCE9DB3-3760-4A61-8292-A4A07D312BC2}|WebApi\\WebApi.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\webapi\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCE9DB3-3760-4A61-8292-A4A07D312BC2}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4AEFB3E-052D-4B3A-84DF-B458BF99E8AB}|Services.Implementations\\Services.Implementations.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\services.implementations\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4AEFB3E-052D-4B3A-84DF-B458BF99E8AB}|Services.Implementations\\Services.Implementations.csproj|solutionrelative:services.implementations\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDD39DFC-B8D8-4713-A16B-7830A0202742}|Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\infrastructure.repositories.implementations\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BDD39DFC-B8D8-4713-A16B-7830A0202742}|Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj|solutionrelative:infrastructure.repositories.implementations\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F04A025E-E2D4-408E-B209-1D7D9C0FA051}|Services.Abstractions\\Services.Abstractions.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\services.abstractions\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F04A025E-E2D4-408E-B209-1D7D9C0FA051}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BDD39DFC-B8D8-4713-A16B-7830A0202742}|Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\infrastructure.repositories.implementations\\infrastructure.repositories.implementations.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{BDD39DFC-B8D8-4713-A16B-7830A0202742}|Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj|solutionrelative:infrastructure.repositories.implementations\\infrastructure.repositories.implementations.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FBCE9DB3-3760-4A61-8292-A4A07D312BC2}|WebApi\\WebApi.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\webapi\\extensions\\notificationconfigurationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FBCE9DB3-3760-4A61-8292-A4A07D312BC2}|WebApi\\WebApi.csproj|solutionrelative:webapi\\extensions\\notificationconfigurationextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDD39DFC-B8D8-4713-A16B-7830A0202742}|Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\infrastructure.repositories.implementations\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BDD39DFC-B8D8-4713-A16B-7830A0202742}|Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj|solutionrelative:infrastructure.repositories.implementations\\notificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BDD39DFC-B8D8-4713-A16B-7830A0202742}|Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\infrastructure.repositories.implementations\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{A1B93B2D-E3AC-4D23-A7E6-9A889A16CD0B}|Services.Repositories\\Services.Repositories.csproj|solutionrelative:services.repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4AEFB3E-052D-4B3A-84DF-B458BF99E8AB}|Services.Implementations\\Services.Implementations.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\services.implementations\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4AEFB3E-052D-4B3A-84DF-B458BF99E8AB}|Services.Implementations\\Services.Implementations.csproj|solutionrelative:services.implementations\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BDD39DFC-B8D8-4713-A16B-7830A0202742}|Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\infrastructure.repositories.implementations\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BDD39DFC-B8D8-4713-A16B-7830A0202742}|Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj|solutionrelative:infrastructure.repositories.implementations\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -71,20 +79,12 @@
       "RelativeMoniker": "D:0:0:{A4AEFB3E-052D-4B3A-84DF-B458BF99E8AB}|Services.Implementations\\Services.Implementations.csproj|solutionrelative:services.implementations\\services.implementations.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F04A025E-E2D4-408E-B209-1D7D9C0FA051}|Services.Abstractions\\Services.Abstractions.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\services.abstractions\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F04A025E-E2D4-408E-B209-1D7D9C0FA051}|Services.Abstractions\\Services.Abstractions.csproj|solutionrelative:services.abstractions\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{85FB8E15-9708-466B-AA30-AE6583E7036C}|Core.Entity\\Core.Entity.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\core.entity\\core.entity.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{85FB8E15-9708-466B-AA30-AE6583E7036C}|Core.Entity\\Core.Entity.csproj|solutionrelative:core.entity\\core.entity.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FBCE9DB3-3760-4A61-8292-A4A07D312BC2}|WebApi\\WebApi.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{FBCE9DB3-3760-4A61-8292-A4A07D312BC2}|WebApi\\WebApi.csproj|solutionrelative:webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FBCE9DB3-3760-4A61-8292-A4A07D312BC2}|WebApi\\WebApi.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\webapi\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FBCE9DB3-3760-4A61-8292-A4A07D312BC2}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{132D612A-4F8B-43EA-AE1B-BB6FBB0ECD4A}|Infrastructure.EF\\Infrastructure.EF.csproj|e:\\projects\\s_test\\notificationapp\\notificatoinservicesapp\\infrastructure.ef\\efinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -102,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 309,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -118,72 +118,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Infrastructure.EF",
-              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.EF\\Infrastructure.EF.csproj",
-              "RelativeDocumentMoniker": "Infrastructure.EF\\Infrastructure.EF.csproj",
-              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.EF\\Infrastructure.EF.csproj",
-              "RelativeToolTip": "Infrastructure.EF\\Infrastructure.EF.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-25T14:16:01.338Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Repositories\\IRepository.cs",
-              "RelativeDocumentMoniker": "Services.Repositories\\IRepository.cs",
-              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Repositories\\IRepository.cs",
-              "RelativeToolTip": "Services.Repositories\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T14:41:34.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\Repository.cs",
-              "RelativeDocumentMoniker": "Infrastructure.Repositories.Implementations\\Repository.cs",
-              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\Repository.cs",
-              "RelativeToolTip": "Infrastructure.Repositories.Implementations\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T14:39:02.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DatabaseContext.cs",
-              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.EF\\DatabaseContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure.EF\\DatabaseContext.cs",
-              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.EF\\DatabaseContext.cs",
-              "RelativeToolTip": "Infrastructure.EF\\DatabaseContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T14:32:53.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\WebApi\\Program.cs",
               "RelativeDocumentMoniker": "WebApi\\Program.cs",
               "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\WebApi\\Program.cs",
               "RelativeToolTip": "WebApi\\Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAqwB0AAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBEAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T10:13:48.83Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "NotificationConfigurationExtensions.cs",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\WebApi\\Extensions\\NotificationConfigurationExtensions.cs",
               "RelativeDocumentMoniker": "WebApi\\Extensions\\NotificationConfigurationExtensions.cs",
@@ -196,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Infrastructure.Repositories.Implementations",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj",
               "RelativeDocumentMoniker": "Infrastructure.Repositories.Implementations\\Infrastructure.Repositories.Implementations.csproj",
@@ -209,7 +157,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 1,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\WebApi\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\NotificationController.cs",
+              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\WebApi\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\NotificationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T13:53:44.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Abstractions\\INotificationService.cs",
+              "RelativeDocumentMoniker": "Services.Abstractions\\INotificationService.cs",
+              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Abstractions\\INotificationService.cs",
+              "RelativeToolTip": "Services.Abstractions\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T13:55:47.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Implementations\\NotificationService.cs",
+              "RelativeDocumentMoniker": "Services.Implementations\\NotificationService.cs",
+              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Implementations\\NotificationService.cs",
+              "RelativeToolTip": "Services.Implementations\\NotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwB4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T10:06:09.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NotificationRepository.cs",
+              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\NotificationRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Repositories.Implementations\\NotificationRepository.cs",
+              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\NotificationRepository.cs",
+              "RelativeToolTip": "Infrastructure.Repositories.Implementations\\NotificationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T14:04:25.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.EF\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure.EF\\DatabaseContext.cs",
+              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.EF\\DatabaseContext.cs",
+              "RelativeToolTip": "Infrastructure.EF\\DatabaseContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T14:32:53.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\Repository.cs",
+              "RelativeDocumentMoniker": "Infrastructure.Repositories.Implementations\\Repository.cs",
+              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\Repository.cs",
+              "RelativeToolTip": "Infrastructure.Repositories.Implementations\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T14:39:02.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "Services.Repositories\\IRepository.cs",
+              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Repositories\\IRepository.cs",
+              "RelativeToolTip": "Services.Repositories\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T14:41:34.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Infrastructure.EF",
+              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.EF\\Infrastructure.EF.csproj",
+              "RelativeDocumentMoniker": "Infrastructure.EF\\Infrastructure.EF.csproj",
+              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.EF\\Infrastructure.EF.csproj",
+              "RelativeToolTip": "Infrastructure.EF\\Infrastructure.EF.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-25T14:16:01.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Notification.cs",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Core.Entity\\Notification.cs",
               "RelativeDocumentMoniker": "Core.Entity\\Notification.cs",
@@ -222,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "IEntity.cs",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Core.Entity\\IEntity.cs",
               "RelativeDocumentMoniker": "Core.Entity\\IEntity.cs",
@@ -235,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Infrastructure.Repositories.Implementations\\UnitOfWork.cs",
@@ -248,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "IUnitOfWork.cs",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Repositories\\IUnitOfWork.cs",
               "RelativeDocumentMoniker": "Services.Repositories\\IUnitOfWork.cs",
@@ -261,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Core.Entity",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Core.Entity\\Core.Entity.csproj",
               "RelativeDocumentMoniker": "Core.Entity\\Core.Entity.csproj",
@@ -274,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Services.Implementations",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Implementations\\Services.Implementations.csproj",
               "RelativeDocumentMoniker": "Services.Implementations\\Services.Implementations.csproj",
@@ -287,20 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NotificationRepository.cs",
-              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\NotificationRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure.Repositories.Implementations\\NotificationRepository.cs",
-              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Infrastructure.Repositories.Implementations\\NotificationRepository.cs",
-              "RelativeToolTip": "Infrastructure.Repositories.Implementations\\NotificationRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T14:04:25.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Services.Repositories",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Repositories\\Services.Repositories.csproj",
               "RelativeDocumentMoniker": "Services.Repositories\\Services.Repositories.csproj",
@@ -313,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "INotificationRepository.cs",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Repositories\\INotificationRepository.cs",
               "RelativeDocumentMoniker": "Services.Repositories\\INotificationRepository.cs",
@@ -322,32 +361,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T13:55:54.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "INotificationService.cs",
-              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Abstractions\\INotificationService.cs",
-              "RelativeDocumentMoniker": "Services.Abstractions\\INotificationService.cs",
-              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Abstractions\\INotificationService.cs",
-              "RelativeToolTip": "Services.Abstractions\\INotificationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T13:55:47.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "NotificationController.cs",
-              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\WebApi\\Controllers\\NotificationController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\NotificationController.cs",
-              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\WebApi\\Controllers\\NotificationController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\NotificationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T13:53:44.769Z",
               "EditorCaption": ""
             },
             {
@@ -378,20 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Implementations\\NotificationService.cs",
-              "RelativeDocumentMoniker": "Services.Implementations\\NotificationService.cs",
-              "ToolTip": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Implementations\\NotificationService.cs",
-              "RelativeToolTip": "Services.Implementations\\NotificationService.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAASwB4AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T10:06:09.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "WebApi.csproj",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\WebApi\\WebApi.csproj",
               "RelativeDocumentMoniker": "WebApi\\WebApi.csproj",
@@ -404,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Services.Abstractions.csproj",
               "DocumentMoniker": "E:\\Projects\\s_test\\NotificationApp\\NotificatoinServicesApp\\Services.Abstractions\\Services.Abstractions.csproj",
               "RelativeDocumentMoniker": "Services.Abstractions\\Services.Abstractions.csproj",

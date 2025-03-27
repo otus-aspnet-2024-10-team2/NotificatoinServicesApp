@@ -7,7 +7,7 @@ namespace WebApi.Extensions;
 
 public static class NotificationConfigurationExtensions
 {
-    public static IServiceCollection AddDependecyGroup(this IServiceCollection services)
+    public static IServiceCollection AddServices(this IServiceCollection services)
     {
         services
             .AddTransient<INotificationService, NotificationService>()

@@ -5,21 +5,18 @@ using Services.Repositories;
 
 namespace Infrastructure.Repositories.Implementations;
 
-public class NotificationRepository : Repository<Notification, int>, INotificationRepository
+public class NotificationRepository : Repository<Notification, Guid>, INotificationRepository
 {        
     public NotificationRepository(DatabaseContext context) : base(context) {}    
 
-    public Task<int> GetDefaultIdAsync()
+    public Task<Guid> GetDefaultIdAsync()
     {
-        Random r = new Random();
-        return Task.FromResult(r.Next(10, 100));
+        return Task.FromResult(Guid.NewGuid());
     }
 
-    public override Task<Notification> GetAsync(int id, CancellationToken token = default)
+    public override Task<Notification> GetAsync(Guid id, CancellationToken token = default)
     {
         var query = Context.Set<Notification>().AsQueryable();
         return query.SingleOrDefaultAsync(x => x.Id == id, token);
     }
-
-
 }

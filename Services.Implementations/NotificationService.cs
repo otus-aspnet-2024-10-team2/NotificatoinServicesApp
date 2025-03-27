@@ -25,7 +25,7 @@ public class NotificationService : INotificationService
     /// Получить произвольный ИД для уведомления
     /// </summary>
     /// <returns></returns>
-    public async Task<int> GetDefaultIdAsync()
+    public async Task<Guid> GetDefaultIdAsync()
     {
         // var defaultId = await _notificationRepository.GetDefaultIdAsync();
         var defaultId = await _service.GetDefaultIdAsync();

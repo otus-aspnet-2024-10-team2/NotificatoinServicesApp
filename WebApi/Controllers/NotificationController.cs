@@ -40,14 +40,14 @@ public class NotificationController : ControllerBase
     public async Task<IActionResult> GetNotificationAsync(Guid id)
     {
         var notification = await _notificationService.GetNotificationByIdAsync(id);
-        if (notification is not null)
-        {
+        // if (notification is not null)
+        // {
             return Ok(_mapper.Map<NotificationModel>(notification));
-        }
-        else
-        {
-            return NotFound("Уведомление не найдено");
-        }
+        // }
+        // else
+        // {
+        //     return NotFound("Уведомление не найдено");
+        // }
     }
 
     /// <summary>

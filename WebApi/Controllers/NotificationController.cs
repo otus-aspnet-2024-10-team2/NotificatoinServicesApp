@@ -58,9 +58,22 @@ public class NotificationController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateNotification(CreatingNotificationModel notificationModel)
     {
-        //var notificationDto = _mapper.Map<CreateNotificationDto>(notificationModel);
         var notification = _mapper.Map<CreateNotificationDto>(notificationModel);
         var a = await _notificationService.CreateNewNotificationAsync(notification);
-        return Ok(notification.Id);
+        return Ok(a);
+    }
+
+    /// <summary>
+    /// Обновить уведомление
+    /// </summary>
+    /// <param name="id">Guid Уведомления</param>
+    /// <param name="updateNotificationDto">Модель обновления</param>
+    /// <returns></returns>
+    [HttpPost("{id}")]
+    public async Task<IActionResult> UpdateNotification(Guid id, UpdatingNotificationModel updateNotificationDto)
+    {
+        var updateNotification = _mapper.Map<UpdatingNotificationModel, UpdateNotificationDto>(updateNotificationDto);
+        await _notificationService.UpdateNotificationAsync(id, updateNotification);
+        return Ok();
     }
 }

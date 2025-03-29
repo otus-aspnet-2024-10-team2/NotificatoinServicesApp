@@ -16,6 +16,7 @@ public class NotificationRepository : Repository<Notification, Guid>, INotificat
 
     public override Task<Notification> GetAsync(Guid id, CancellationToken token = default)
     {
+        // var notification = Context.Set>()/
         var query = Context.Set<Notification>().AsQueryable();
         return query.SingleOrDefaultAsync(x => x.Id == id, token);
     }

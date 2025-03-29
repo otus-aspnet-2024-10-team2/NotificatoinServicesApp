@@ -28,8 +28,8 @@ public interface INotificationService
     /// <summary>
     /// Обновить уведомление
     /// </summary>
-    /// <param name="id"></param>
-    /// <param name="updateNotificationDto"></param>
+    /// <param name="id">GUID Уведомления</param>
+    /// <param name="updateNotificationDto">DTO уведомления</param>
     /// <returns></returns>
     Task UpdateNotificationAsync(Guid id, UpdateNotificationDto updateNotificationDto);
 }

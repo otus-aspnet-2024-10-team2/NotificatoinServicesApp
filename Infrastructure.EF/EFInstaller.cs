@@ -11,7 +11,7 @@ namespace Infrastructure.EF
     public static class EFInstaller
     {
         public static IServiceCollection ConfigurationContext(this IServiceCollection services,
-            string connectionString)
+            string? connectionString)
         {
             services.AddDbContext<DatabaseContext>(optionalBuilder
                 => optionalBuilder

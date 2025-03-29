@@ -47,9 +47,9 @@ public class NotificationService : INotificationService
     public async Task<Guid> CreateNewNotificationAsync(CreateNotificationDto createNotificationDto)
     {
         var notification = _mapper.Map<CreateNotificationDto, Notification>(createNotificationDto);
-        var createdNotification = await _service.AddAsync(notification);
+        var n =  _service.Add(notification); 
         await _service.SaveChangesAsync();
-        return notification.Id;
+        return n.Id;
     }
     
     /// <summary>

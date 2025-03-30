@@ -7,7 +7,7 @@ using WebApi.Models.Notification;
 namespace WebApi.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 public class NotificationController : ControllerBase
 {
     private readonly INotificationService _notificationService;
@@ -22,7 +22,6 @@ public class NotificationController : ControllerBase
     /// <summary>
     /// Получить произвольный ИД
     /// </summary>
-    /// <param name="id"></param>
     /// <returns></returns>
     [HttpGet]
     public async Task<IActionResult> CreateIdNotification()
@@ -34,7 +33,6 @@ public class NotificationController : ControllerBase
     /// <summary>
     /// Найти уведомление по ID
     /// </summary>
-    /// <param name="id">GUID</param>
     /// <returns>Уведомление</returns>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetNotificationAsync(Guid id)
@@ -53,7 +51,6 @@ public class NotificationController : ControllerBase
     /// <summary>
     /// Создать уведомление
     /// </summary>
-    /// <param name="notificationModel"></param>
     /// <returns></returns>
     [HttpPost]
     public async Task<IActionResult> CreateNotification(CreatingNotificationModel notificationModel)
@@ -66,8 +63,6 @@ public class NotificationController : ControllerBase
     /// <summary>
     /// Обновить уведомление
     /// </summary>
-    /// <param name="id">Guid Уведомления</param>
-    /// <param name="updateNotificationDto">Модель обновления</param>
     /// <returns></returns>
     [HttpPost("{id}")]
     public async Task<IActionResult> UpdateNotification(Guid id, UpdatingNotificationModel updateNotificationDto)

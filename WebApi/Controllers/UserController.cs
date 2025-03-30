@@ -7,7 +7,7 @@ using WebApi.Models.User;
 namespace WebApi.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
@@ -24,7 +24,7 @@ public class UserController : ControllerBase
     /// Получить произвольный ИД пользователя
     /// </summary>
     /// <returns></returns>
-    [HttpGet]    
+    [HttpGet(Name = "Get")]    
     public async Task<IActionResult> GetRandomUserId()
     {
         return Ok(await _userService.GetRandomUserId());

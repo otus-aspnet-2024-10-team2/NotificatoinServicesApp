@@ -2,6 +2,7 @@ using AutoFixture;
 using AutoFixture.AutoMoq;
 using Core.Entity;
 using FluentAssertions;
+using FluentAssertions.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -62,4 +63,14 @@ public class NotificationUnitTests
         //Assert
         result.Should().NotBe(null);
     }
+    //
+    // [Theory]
+    // [InlineData("2025-03-10", "2025-10-05")]
+    // public async Task Create_Date_Notification(string date1, string date2)
+    // {
+    //     //Arrange
+    //     var d1 = DateTime.Parse(date1);
+    //     var d2 = DateTime.Parse(date2);
+    //     
+    // }
 }

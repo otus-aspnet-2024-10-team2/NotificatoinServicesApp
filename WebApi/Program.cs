@@ -1,3 +1,4 @@
+using System.Reflection;
 using Core.Entity;
 using Infrastructure.EF;
 using Infrastructure.Repositories.Implementations;
@@ -35,7 +36,11 @@ public class Program
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "NotificationApp", Version = "v1" });
+            // var filename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var filePath = Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml");
+            c.IncludeXmlComments(filePath);
         });
+        
         
         services.AddCors();
         builder.Services.AddOpenApi();
@@ -54,7 +59,7 @@ public class Program
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "NotificationServiceApi V1");
-                c.RoutePrefix = string.Empty;
+                c.RoutePrefix = "";
             });
         }
         app.UseRouting();

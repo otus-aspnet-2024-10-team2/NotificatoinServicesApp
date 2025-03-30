@@ -11,7 +11,9 @@ namespace Infrastructure.EF
             services.AddDbContext<DatabaseContext>(optionalBuilder
                 => optionalBuilder
                 .UseLazyLoadingProxies()
-                .UseSqlite(connectionString));
+                .UseSqlite(connectionString)
+                // .UseNpgsql(connectionString)
+                );
 
             return services;
         }

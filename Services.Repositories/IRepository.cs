@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Entity.Base;
 
 namespace Services.Repositories
 {
@@ -52,6 +53,7 @@ namespace Services.Repositories
         /// <param name="id"></param>
         /// <returns></returns>
         bool Delete(TPrimaryKey id);
+
         /// <summary>
         /// Получить сущность по id
         /// </summary>

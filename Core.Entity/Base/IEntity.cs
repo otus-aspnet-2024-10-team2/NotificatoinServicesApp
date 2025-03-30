@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Core.Entity
+﻿namespace Core.Entity.Base
 {
-    public interface IEntity<TId>
+    public interface IEntity<out TId>
     {
         TId Id { get; }
     }

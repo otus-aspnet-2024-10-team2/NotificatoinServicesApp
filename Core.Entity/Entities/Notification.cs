@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Core.Entity.Base;
 using Core.Entity.Exceptions;
 using Core.Entity.Helpers;
 

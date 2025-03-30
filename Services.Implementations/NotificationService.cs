@@ -17,15 +17,15 @@ public class NotificationService : INotificationService
         _service = repository;
         _mapper = mapper;
     }
-
+   
+    
     /// <summary>
     /// Получить произвольный ИД для уведомления
     /// </summary>
     /// <returns></returns>
     public async Task<Guid> GetDefaultIdAsync()
     {
-        var defaultId = await _service.GetDefaultIdAsync();
-        return defaultId;
+        return await _service.GetDefaultIdAsync();
     }
 
     /// <summary>

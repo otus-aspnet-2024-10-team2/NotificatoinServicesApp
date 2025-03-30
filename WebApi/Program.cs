@@ -20,13 +20,18 @@ public class Program
         //найтрока automapper'a
         services.InstallAutomapper();
         //DI
+        //notifications
         services.AddScoped<INotificationService, NotificationService>();
-        services.AddTransient<INotificationRepository, NotificationRepository>();
+        services.AddScoped<INotificationRepository, NotificationRepository>();
+        //users
+        services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IUserRepository, UserRepository>();
+        
         services.ConfigurationContext(builder.Configuration.GetConnectionString("SqliteConnection"));
         
         services.AddAuthorization();
         services.AddEndpointsApiExplorer();
-        //Swager
+        //Swagger
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "NotificationApp", Version = "v1" });

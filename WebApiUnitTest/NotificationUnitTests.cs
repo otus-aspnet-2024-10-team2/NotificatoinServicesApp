@@ -5,6 +5,7 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
+using Services.Contracts.Notification;
 using Services.Repositories;
 using WebApi.Controllers;
 using WebApi.Models.Notification;
@@ -32,20 +33,20 @@ public class NotificationUnitTests
     /// <summary>
     /// Если не найдено уведомление, выдать ошибку
     /// </summary>
-    // [Fact]
-    // public async Task Get_Notification_IsEmpty_NotFound()
-    // {
-    //     //Arrange
-    //     Guid id = Guid.NewGuid();
-    //     Notification? n = null;
-    //     
-    //     //Act
-    //     _mockRepository.Setup(x => x.GetAsync(id, CancellationToken.None))!.ReturnsAsync((n));
-    //     var result = await _notificationController.GetNotificationAsync(id);
-    //     
-    //     //Assert
-    //     result.Should().Be(null);
-    // }
+    [Fact]
+    public async Task Get_Notification_IsEmpty_NotFound()
+    {
+        //Arrange
+        Guid id = Guid.NewGuid();
+        Notification? n = null;
+        
+        //Act
+        _mockRepository.Setup(x => x.GetAsync(id, CancellationToken.None))!.ReturnsAsync((n));
+        var result = await _notificationController.GetNotificationAsync(id);
+        
+        //Assert
+        result.Should().BeAssignableTo<OkObjectResult>();
+    }
 
     [Fact]
     public async Task Create_New_Deafult_Notification_And_Save_Database()

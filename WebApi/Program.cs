@@ -2,12 +2,15 @@ using System.Reflection;
 using Core.Entity;
 using Infrastructure.EF;
 using Infrastructure.Repositories.Implementations;
+using MassTransit;
+using MassTransit.MultiBus;
 using Microsoft.OpenApi.Models;
 using Services.Abstractions;
 using Services.Implementations;
 using Services.Repositories;
 using WebApi.Controllers;
 using WebApi.Extensions;
+using WebApi.Extensions.NotificationExtensions;
 
 namespace WebApi;
 
@@ -28,7 +31,8 @@ public class Program
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IUserRepository, UserRepository>();
         
-        services.ConfigurationContext(builder.Configuration.GetConnectionString("SqliteConnection"));
+        var config = builder.Configuration;
+        services.ConfigurationContext(config.GetConnectionString("SqliteConnection"));
         
         services.AddAuthorization();
         services.AddEndpointsApiExplorer();
@@ -36,11 +40,18 @@ public class Program
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "NotificationApp", Version = "v1" });
-            // var filename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var filePath = Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml");
             c.IncludeXmlComments(filePath);
         });
-        
+
+        services.AddMassTransit(x =>
+        {
+            x.UsingRabbitMq((context, cfg) =>
+            {
+                RmqExtension.InstallRabbitMqSetting(cfg, config);
+                RmqExtension.InstallRabbitMqEndpoint(cfg);
+            });
+        });
         
         services.AddCors();
         builder.Services.AddOpenApi();
@@ -63,11 +74,8 @@ public class Program
             });
         }
         app.UseRouting();
-         
         app.UseAuthorization();
-
         app.MapControllers();
-        
         app.Run();
     }
 }

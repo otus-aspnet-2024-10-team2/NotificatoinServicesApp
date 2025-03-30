@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Services.Abstractions;
 using Services.Contracts.Notification;
@@ -12,11 +13,16 @@ public class NotificationController : ControllerBase
 {
     private readonly INotificationService _notificationService;
     private readonly IMapper _mapper;
+    private readonly IPublishEndpoint _publishEndpoint;
+    private readonly IBusControl _busControl;
 
-    public NotificationController(INotificationService notificationService, IMapper mapper)
+    public NotificationController(INotificationService notificationService, IMapper mapper,
+        IPublishEndpoint publishEndpoint, IBusControl busControl)
     {
         _notificationService = notificationService ?? throw new ArgumentNullException(nameof(notificationService));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+        _publishEndpoint = publishEndpoint;
+        _busControl = busControl;
     }
     
     /// <summary>

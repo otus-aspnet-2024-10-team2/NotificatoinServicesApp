@@ -13,7 +13,6 @@ public class NotificationController : ControllerBase
 {
     private readonly INotificationService _notificationService;
     private readonly IMapper _mapper;
-    private readonly IPublishEndpoint _publishEndpoint;
     private readonly IBusControl _busControl;
 
     public NotificationController(INotificationService notificationService, IMapper mapper,
@@ -21,7 +20,6 @@ public class NotificationController : ControllerBase
     {
         _notificationService = notificationService ?? throw new ArgumentNullException(nameof(notificationService));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-        _publishEndpoint = publishEndpoint;
         _busControl = busControl;
     }
     
@@ -76,5 +74,19 @@ public class NotificationController : ControllerBase
         var updateNotification = _mapper.Map<UpdatingNotificationModel, UpdateNotificationDto>(updateNotificationDto);
         await _notificationService.UpdateNotificationAsync(id, updateNotification);
         return Ok();
+    }
+
+    /// <summary>
+    /// Отправить уведомление
+    /// </summary>
+    /// <param name="notificationRequest"></param>
+    /// <returns></returns>
+    [HttpPost("sending/{id:guid}")]
+    public async Task<IActionResult> SendNotification(Guid id, CreateNotificationRequest model)
+    {
+        var notificat = _notificationService.GetNotificationByIdAsync(id);
+        var sendNotification = _mapper.Map<SendNotificationDto>(notificat);
+        await _notificationService.SendNotificationAsync(id, sendNotification);
+        return Ok();    
     }
 }

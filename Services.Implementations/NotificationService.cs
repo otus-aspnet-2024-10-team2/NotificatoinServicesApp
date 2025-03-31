@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Core.Entity;
+using Core.Entity.Events;
+using MassTransit;
 using Services.Abstractions;
 using Services.Contracts.Notification;
 using Services.Contracts.NotificationDto;
@@ -11,11 +13,14 @@ public class NotificationService : INotificationService
 {
     private readonly INotificationRepository _service;
     private readonly IMapper _mapper;
+    private readonly IPublishEndpoint _publishEndpoint;
     public NotificationService(INotificationRepository repository,
-        IMapper mapper)
+        IMapper mapper, 
+        IPublishEndpoint publishEndpoint)
     {
         _service = repository;
         _mapper = mapper;
+        _publishEndpoint = publishEndpoint; 
     }
    
     
@@ -68,5 +73,29 @@ public class NotificationService : INotificationService
         notification.Title = updateNotificationDto.Title;
         _service.Update(notification);
         await _service.SaveChangesAsync();
+    }
+
+    /// <summary>
+    /// Публикуем уведомление
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="sendNotificationDto"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public async Task SendNotificationAsync(Guid id, SendNotificationDto sendNotificationDto)
+    {
+        var notification = _mapper.Map<SendNotificationDto, Notification>(sendNotificationDto);
+        await _publishEndpoint.Publish(new NotificationCreatedEvent
+        {
+            Id = id,
+            Description = notification.Description,
+            Title = notification.Title,
+        });
+        
+    }
+
+    public async Task MarkNotificationAsReadAsync(Guid id)
+    {
+        await _service.MarkAsReadAsync(id);
     }
 }

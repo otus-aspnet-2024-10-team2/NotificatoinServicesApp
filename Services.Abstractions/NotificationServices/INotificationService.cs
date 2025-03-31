@@ -32,4 +32,17 @@ public interface INotificationService
     /// <param name="updateNotificationDto">DTO уведомления</param>
     /// <returns></returns>
     Task UpdateNotificationAsync(Guid id, UpdateNotificationDto updateNotificationDto);
+    /// <summary>
+    /// Передать уведомление
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="sendNotificationDto"></param>
+    /// <returns></returns>
+    Task SendNotificationAsync(Guid id, SendNotificationDto sendNotificationDto);
+    /// <summary>
+    /// Пометить прочитанным уведомление
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    Task MarkNotificationAsReadAsync(Guid id);
 }

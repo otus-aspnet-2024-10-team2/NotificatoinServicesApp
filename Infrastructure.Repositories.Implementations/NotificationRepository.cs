@@ -14,6 +14,15 @@ public class NotificationRepository : Repository<Notification, Guid>, INotificat
         return Task.FromResult(Guid.NewGuid());
     }
 
+    public async Task MarkAsReadAsync(Guid id)
+    {
+        var notification = await Context.Set<Notification>().FindAsync(id);
+        if (notification != null)
+        {
+            await Context.SaveChangesAsync();
+        }
+    }
+
     public override Task<Notification> GetAsync(Guid id, CancellationToken token = default)
     {
         // var notification = Context.Set>()/

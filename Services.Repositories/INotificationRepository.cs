@@ -9,4 +9,6 @@ public interface INotificationRepository : IRepository<Notification, Guid>
     /// </summary>
     /// <returns></returns>
     Task<Guid> GetDefaultIdAsync();
+    
+    Task MarkAsReadAsync(Guid id);
 }

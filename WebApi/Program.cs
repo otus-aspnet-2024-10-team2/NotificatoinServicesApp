@@ -52,7 +52,6 @@ public class Program
                 RmqExtension.InstallRabbitMqEndpoint(cfg);
             });
         });
-        
         services.AddCors();
         builder.Services.AddOpenApi();
 

@@ -14,13 +14,16 @@ public class NotificationController : ControllerBase
     private readonly INotificationService _notificationService;
     private readonly IMapper _mapper;
     private readonly IBusControl _busControl;
+    private readonly ILogger<NotificationController> _logger;
 
     public NotificationController(INotificationService notificationService, IMapper mapper,
-        IPublishEndpoint publishEndpoint, IBusControl busControl)
+        IPublishEndpoint publishEndpoint, IBusControl busControl,
+        ILogger<NotificationController> logger)
     {
         _notificationService = notificationService ?? throw new ArgumentNullException(nameof(notificationService));
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         _busControl = busControl;
+        _logger = logger;
     }
     
     /// <summary>
@@ -30,7 +33,9 @@ public class NotificationController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> CreateIdNotification()
     {
+        _logger.LogInformation($"Вызов метода получения произвольного GUID уведомления");
         var a = await _notificationService.GetDefaultIdAsync();
+        _logger.LogInformation($"Произвольный GUID: {a}");
         return Ok(a);
     }
 
@@ -41,13 +46,16 @@ public class NotificationController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetNotificationAsync(Guid id)
     {
+        _logger.LogInformation($"Начало поиска уведомления по GUID:{id}");
         var notification = await _notificationService.GetNotificationByIdAsync(id);
         if (notification is not null)
         {
+            _logger.LogInformation("Уведомление успешно найдено");
             return Ok(_mapper.Map<NotificationModel>(notification));
         }
         else
         {
+            _logger.LogWarning($"Уведомление № {id} не найдено в системе");
             return NotFound("Уведомление не найдено");
         }
     }
@@ -59,9 +67,20 @@ public class NotificationController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateNotification(CreatingNotificationModel notificationModel)
     {
-        var notification = _mapper.Map<CreateNotificationDto>(notificationModel);
-        var a = await _notificationService.CreateNewNotificationAsync(notification);
-        return Ok(a);
+        try
+        {
+            _logger.LogInformation("Начало процесса создания уведомления.");
+            var notification = _mapper.Map<CreateNotificationDto>(notificationModel);
+            var a = await _notificationService.CreateNewNotificationAsync(notification);
+            _logger.LogInformation($"Уведомление успешно создано. GUID: {a}");
+            return Ok(a);
+        }
+        catch (Exception ex)
+        {
+            var m = $"Ошибка при попытке создать запись в БД, для уведомления № {notificationModel.Id}";
+            _logger.LogCritical(m);
+            return BadRequest(m);
+        }
     }
 
     /// <summary>
@@ -71,9 +90,19 @@ public class NotificationController : ControllerBase
     [HttpPost("{id}")]
     public async Task<IActionResult> UpdateNotification(Guid id, UpdatingNotificationModel updateNotificationDto)
     {
-        var updateNotification = _mapper.Map<UpdatingNotificationModel, UpdateNotificationDto>(updateNotificationDto);
-        await _notificationService.UpdateNotificationAsync(id, updateNotification);
-        return Ok();
+        try
+        {
+            _logger.LogInformation($"Начало процесса обновления уведомления № {updateNotificationDto.Id}");
+            var updateNotification =
+                _mapper.Map<UpdatingNotificationModel, UpdateNotificationDto>(updateNotificationDto);
+            await _notificationService.UpdateNotificationAsync(id, updateNotification);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogCritical($"Ошибка процедуры обновления уведомления GUID: {updateNotificationDto.Id}\n{ex.Message}");
+            return BadRequest(ex.Message);
+        }
     }
 
     /// <summary>
@@ -84,9 +113,19 @@ public class NotificationController : ControllerBase
     [HttpPost("sending/{id:guid}")]
     public async Task<IActionResult> SendNotification(Guid id, CreateNotificationRequest model)
     {
-        var notificat = _notificationService.GetNotificationByIdAsync(id);
-        var sendNotification = _mapper.Map<SendNotificationDto>(notificat);
-        await _notificationService.SendNotificationAsync(id, sendNotification);
-        return Ok();    
+        try
+        {
+            _logger.LogInformation("Начало процедуры передачи уведомления");
+            var notificat = _notificationService.GetNotificationByIdAsync(id);
+            var sendNotification = _mapper.Map<SendNotificationDto>(notificat);
+            await _notificationService.SendNotificationAsync(id, sendNotification);
+            _logger.LogInformation("Уведомление успешно передано");
+            return Ok();
+        }
+        catch (Exception ex)
+        {   
+            _logger.LogCritical($"Ошибка процедуры передачи уведомления GUID: {id}\n{ex.Message}");
+            return BadRequest(ex.Message);
+        }
     }
 }

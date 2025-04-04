@@ -4,6 +4,7 @@ using Infrastructure.EF;
 using Infrastructure.Repositories.Implementations;
 using MassTransit;
 using MassTransit.MultiBus;
+using MediatR;
 using Microsoft.OpenApi.Models;
 using Services.Abstractions;
 using Services.Implementations;
@@ -20,19 +21,18 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
         var services = builder.Services;
+        //added mediatR
+        services.AddMediatR(Assembly.GetExecutingAssembly());
         services.AddControllers();
+        
         //найтрока automapper'a
         services.InstallAutomapper();
+        
         //DI
-        //notifications
-        services.AddScoped<INotificationService, NotificationService>();
-        services.AddScoped<INotificationRepository, NotificationRepository>();
-        //users
-        services.AddScoped<IUserService, UserService>();
-        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddServices();
         
         var config = builder.Configuration;
-        services.ConfigurationContext(config.GetConnectionString("SqliteConnection"));
+        services.ConfigurationContext(config.GetConnectionString("PSQLConnectionString"));
         
         services.AddAuthorization();
         services.AddEndpointsApiExplorer();

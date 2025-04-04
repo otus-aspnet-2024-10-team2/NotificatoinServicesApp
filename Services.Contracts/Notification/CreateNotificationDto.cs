@@ -1,4 +1,5 @@
-﻿using Core.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using Core.Entity;
 using Core.Entity.Base;
 
 namespace Services.Contracts.Notification;
@@ -14,10 +15,12 @@ public class CreateNotificationDto : IEntity<Guid>
     /// <summary>
     /// Наименование
     /// </summary>
+    [Required(ErrorMessage = "Не указан заголовок уведомления")]
     public string Title { get; set; }
     /// <summary>
     /// Текст уведомления
     /// </summary>
+    [Required(ErrorMessage = "Не указано описание уведомления")]
     public string Description { get; set; }
     /// <summary>
     /// Дата создания, по умолчанию - текущая дата

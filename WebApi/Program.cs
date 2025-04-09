@@ -52,7 +52,15 @@ public class Program
                 RmqExtension.InstallRabbitMqEndpoint(cfg);
             });
         });
-        services.AddCors();
+        services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll", policy =>
+            {
+                policy.AllowAnyHeader()
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod();
+            });
+        });
         builder.Services.AddOpenApi();
 
         var app = builder.Build();

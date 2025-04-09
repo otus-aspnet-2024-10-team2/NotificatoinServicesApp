@@ -80,6 +80,7 @@ public class Program
                 c.RoutePrefix = "";
             });
         }
+        app.UseCors("AllowAll");
         app.UseRouting();
         app.UseAuthorization();
         app.MapControllers();

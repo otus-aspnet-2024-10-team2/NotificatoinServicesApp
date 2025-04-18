@@ -8,7 +8,7 @@ public class DatabaseContext : DbContext
 {
     public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
     {
-        Database.EnsureCreated();      
+        //Database.EnsureCreated();      
     }
     
     /// <summary>
@@ -21,12 +21,12 @@ public class DatabaseContext : DbContext
     /// </summary>
     public DbSet<User> Users { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
-
-        modelBuilder.Entity<User>().Property(u => u.Name).HasMaxLength(200);
-    }
+    // protected override void OnModelCreating(ModelBuilder modelBuilder)
+    // {
+    //     //base.OnModelCreating(modelBuilder);
+    //
+    //     modelBuilder.Entity<User>().Property(u => u.Name).HasMaxLength(200);
+    // }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

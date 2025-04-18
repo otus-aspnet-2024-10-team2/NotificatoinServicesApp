@@ -1,4 +1,5 @@
-﻿using Services.Contracts.Notification;
+﻿using Core.Entity;
+using Services.Contracts.Notification;
 using Services.Contracts.NotificationDto;
 
 namespace Services.Abstractions;
@@ -45,4 +46,19 @@ public interface INotificationService
     /// <param name="id"></param>
     /// <returns></returns>
     Task MarkNotificationAsReadAsync(Guid id);
+    
+    /// <summary>
+    /// Удалить уведомление
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    Task DeleteNotificationAsync(Guid id);
+    
+    /// <summary>
+    /// Получить все уведомления из БД
+    /// </summary>
+    /// <param name="noTracking"></param>
+    /// <returns></returns>
+    Task<ICollection<Notification>> GetAllNotificationsAsync(bool noTracking = false);
+    
 }

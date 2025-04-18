@@ -128,4 +128,27 @@ public class NotificationController : ControllerBase
             return BadRequest(ex.Message);
         }
     }
+
+    /// <summary>
+    /// Удалить запись
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteNotification(Guid id)
+    {
+        await _notificationService.DeleteNotificationAsync(id);
+        return Ok();
+    }
+
+    /// <summary>
+    /// Получить все уведомления
+    /// </summary>
+    /// <returns></returns>
+    [HttpPost("list")]
+    public async Task<IActionResult> GetAllNotificationsAsync()
+    {
+        var notifications = await _notificationService.GetAllNotificationsAsync();
+        return Ok(notifications);
+    }
 }

@@ -29,6 +29,7 @@ namespace Services.Repositories
         /// Сохранить изменения
         /// </summary>
         void SaveChanges();
+        
         /// <summary>
         /// Сохранить изменения
         /// </summary>
@@ -68,5 +69,20 @@ namespace Services.Repositories
         /// <param name="id"></param>
         /// <returns></returns>
         T Get(TPrimaryKey id);
+        
+        /// <summary>
+        /// Получить все записи
+        /// </summary>
+        /// <param name="noTracking">ключь для AsNoTracking</param>
+        /// <returns></returns>
+        IQueryable<T> GetAll(bool noTracking = false);
+        
+        /// <summary>
+        /// Получить все записи
+        /// </summary>
+        /// <param name="noTracking"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        Task<List<T>> GetAllAsync(bool noTracking = false, CancellationToken token = default);
     }
 }

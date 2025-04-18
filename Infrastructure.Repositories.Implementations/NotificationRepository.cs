@@ -23,6 +23,16 @@ public class NotificationRepository : Repository<Notification, Guid>, INotificat
         }
     }
 
+    /// <summary>
+    /// Получить все записи по уведомлениям из БД
+    /// </summary>
+    /// <param name="noTracking"></param>
+    /// <returns></returns>
+    public async Task<List<Notification>> GetAllAsync(bool noTracking = false)
+    {
+        return await Context.Set<Notification>().ToListAsync();
+    }
+
     public override Task<Notification> GetAsync(Guid id, CancellationToken token = default)
     {
         // var notification = Context.Set>()/

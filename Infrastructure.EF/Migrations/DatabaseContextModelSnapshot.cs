@@ -45,6 +45,9 @@ namespace Infrastructure.EF.Migrations
                         .HasColumnType("text")
                         .HasColumnName("Description");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
                     b.Property<bool>("Sending")
                         .HasColumnType("boolean")
                         .HasColumnName("Sending");
@@ -85,8 +88,7 @@ namespace Infrastructure.EF.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasColumnType("text");
 
                     b.PrimitiveCollection<int[]>("NotificationTypes")
                         .IsRequired()

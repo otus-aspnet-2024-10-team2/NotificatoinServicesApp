@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.EF.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20250418095047_Seeding")]
-    partial class Seeding
+    [Migration("20250418103619_AddDelete")]
+    partial class AddDelete
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,6 +47,9 @@ namespace Infrastructure.EF.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("Description");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
 
                     b.Property<bool>("Sending")
                         .HasColumnType("boolean")
@@ -88,8 +91,7 @@ namespace Infrastructure.EF.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasColumnType("text");
 
                     b.PrimitiveCollection<int[]>("NotificationTypes")
                         .IsRequired()

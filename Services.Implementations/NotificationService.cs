@@ -98,4 +98,21 @@ public class NotificationService : INotificationService
     {
         await _service.MarkAsReadAsync(id);
     }
+    
+    /// <summary>
+    /// Удалить уведомление из БД
+    /// </summary>
+    /// <param name="id"></param>
+    public async Task DeleteNotificationAsync(Guid id)
+    {
+        var notification = await _service.GetAsync(id);
+        notification.IsDeleted = true;
+        await _service.SaveChangesAsync();
+    }
+
+    public async Task<ICollection<Notification>> GetAllNotificationsAsync(bool noTracking = false)
+    {
+        ICollection<Notification> notifications = await _service.GetAllAsync(noTracking);
+        return notifications;
+    }
 }

@@ -69,6 +69,27 @@ namespace Infrastructure.Repositories.Implementations
             return _entitySet.Find(id);
         }
 
+        /// <summary>
+        /// Получить все сущности в бд
+        /// </summary>
+        /// <param name="noTracking"></param>
+        /// <returns></returns>
+        public virtual IQueryable<T> GetAll(bool noTracking = false)
+        {
+            return noTracking ? _entitySet.AsNoTracking() : _entitySet;
+        }
+
+        /// <summary>
+        /// Получить все записи из БД по сущности
+        /// </summary>
+        /// <param name="noTracking"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public async Task<List<T>> GetAllAsync(bool noTracking = false, CancellationToken token = default)
+        {
+            return await GetAll().ToListAsync(token);
+        }
+
         public virtual async Task<T> GetAsync(TPrimaryKey id, CancellationToken token = default)
         {
             return await _entitySet.FindAsync((object)id, token);

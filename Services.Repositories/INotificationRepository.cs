@@ -11,4 +11,11 @@ public interface INotificationRepository : IRepository<Notification, Guid>
     Task<Guid> GetDefaultIdAsync();
     
     Task MarkAsReadAsync(Guid id);
+    
+    /// <summary>
+    /// Получить все уведомления из БД
+    /// </summary>
+    /// <param name="noTracking"></param>
+    /// <returns></returns>
+    Task<List<Notification>> GetAllAsync(bool noTracking = false);
 }

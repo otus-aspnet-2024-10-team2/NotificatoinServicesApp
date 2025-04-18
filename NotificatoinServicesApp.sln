@@ -46,6 +46,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiUnitTest", "WebApiUni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Messaging", "Infrastructure.Messaging\Infrastructure.Messaging.csproj", "{1F98F636-1C73-498C-8345-411473CC6172}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{1F98F636-1C73-498C-8345-411473CC6172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F98F636-1C73-498C-8345-411473CC6172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F98F636-1C73-498C-8345-411473CC6172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,5 +112,8 @@ Global
 		{BDD39DFC-B8D8-4713-A16B-7830A0202742} = {A5AA3F0C-30CE-49E1-B0CA-AA97C8F7D8CC}
 		{1A0E9078-E117-465D-8758-A4870E27509E} = {008B60F3-22B6-4ECA-B370-89968E9BACC4}
 		{1F98F636-1C73-498C-8345-411473CC6172} = {A5AA3F0C-30CE-49E1-B0CA-AA97C8F7D8CC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73A4720F-9473-4E04-9A27-FE81089B384E}
 	EndGlobalSection
 EndGlobal

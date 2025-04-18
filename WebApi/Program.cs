@@ -54,15 +54,15 @@ public class Program
         });
         services.AddCors(options =>
         {
-            options.AddPolicy("AllowAll", policy =>
+            options.AddPolicy("ReactNotificationPolicy", policy =>
             {
-                policy.AllowAnyHeader()
-                    .AllowAnyOrigin()
+                policy.WithHeaders("http://localhost:3000") // хост к клиенту
+                    .AllowAnyHeader()
                     .AllowAnyMethod();
             });
         });
         builder.Services.AddOpenApi();
-
+        
         var app = builder.Build();
 
         if (app.Environment.IsDevelopment())
@@ -80,7 +80,7 @@ public class Program
                 c.RoutePrefix = "";
             });
         }
-        app.UseCors("AllowAll");
+        app.UseCors("ReactNotificationPolicy");
         app.UseRouting();
         app.UseAuthorization();
         app.MapControllers();

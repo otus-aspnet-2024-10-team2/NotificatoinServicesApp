@@ -20,6 +20,5 @@ public class NotificationFileConsumer  : IConsumer<NotificationFileMessage>
     {
         var msg = context.Message;
         _logger.LogInformation($"Received notification file message: {msg.FilePath}");
-        
     }
 }

@@ -57,6 +57,7 @@ public class Program
             options.AddPolicy("ReactNotificationPolicy", policy =>
             {
                 policy.WithHeaders("http://localhost:3000") // хост к клиенту
+                    .AllowAnyOrigin()
                     .AllowAnyHeader()
                     .AllowAnyMethod();
             });

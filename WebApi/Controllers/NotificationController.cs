@@ -71,6 +71,7 @@ public class NotificationController : ControllerBase
         {
             _logger.LogInformation("Начало процесса создания уведомления.");
             var notification = _mapper.Map<CreateNotificationDto>(notificationModel);
+            notification.Id = await _notificationService.GetDefaultIdAsync();
             var a = await _notificationService.CreateNewNotificationAsync(notification);
             _logger.LogInformation($"Уведомление успешно создано. GUID: {a}");
             return Ok(a);

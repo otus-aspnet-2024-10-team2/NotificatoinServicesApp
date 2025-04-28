@@ -25,12 +25,12 @@ public class Notification : IEntity<Guid>
     /// <summary>
     /// Дата создания, по умолчанию - текущая дата
     /// </summary>
-    [Column("DateCreated")]
+    [Column("DateCreated", TypeName = "date")]
     public DateTime DateCreated { get; set; } = DateTime.Now;
     /// <summary>
     /// Дата рассылки
     /// </summary>
-    [Column("DateSended")]
+    [Column("DateSended", TypeName = "date")]
     public DateTime? DateSended { get; set; }
     /// <summary>
     /// Признак рассылки

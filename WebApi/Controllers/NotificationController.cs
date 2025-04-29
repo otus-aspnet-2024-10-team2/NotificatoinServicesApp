@@ -79,7 +79,7 @@ public class NotificationController : ControllerBase
         }
         catch (Exception ex)
         {
-            var m = $"Ошибка при попытке создать запись в БД, для уведомления № {notificationModel.Id}";
+            var m = $"Ошибка при попытке создать запись в БД, для уведомления № {notificationModel.Id}\n{ex.Message}";
             _logger.LogCritical(m);
             return BadRequest(m);
         }
@@ -147,7 +147,7 @@ public class NotificationController : ControllerBase
     /// Получить все уведомления
     /// </summary>
     /// <returns></returns>
-    [HttpPost("list")]
+    [HttpGet("list")]
     public async Task<IActionResult> GetAllNotificationsAsync()
     {
         var notifications = await _notificationService.GetAllNotificationsAsync();

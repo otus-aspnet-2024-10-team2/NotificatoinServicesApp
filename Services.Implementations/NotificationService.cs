@@ -107,6 +107,7 @@ public class NotificationService : INotificationService
     {
         var notification = await _service.GetAsync(id);
         notification.IsDeleted = true;
+        _service.Delete(id);
         await _service.SaveChangesAsync();
     }
 

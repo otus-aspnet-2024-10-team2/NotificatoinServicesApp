@@ -12,12 +12,15 @@ public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
     private readonly IMapper _mapper;
+    private readonly ILogger<UserController> _logger;
 
     public UserController(IUserService userService,
-        IMapper mapper)
+        IMapper mapper,
+        ILogger<UserController> logger)
     {
         _userService = userService;
         _mapper = mapper;
+        _logger = logger;
     }
 
     /// <summary>
@@ -51,10 +54,22 @@ public class UserController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateNewUserAsync(CreateUserModel createUserModel)
     {
-        var id = await _userService.GetRandomUserId();
-        var user = _mapper.Map<CreateUserDto>(createUserModel);
-        await _userService.CreateNewUserAsync(id, user);
-        return Ok(user.Id);
+        try
+        {
+            _logger.LogInformation("Creating new user");
+            var id = await _userService.GetRandomUserId();
+            _logger.LogInformation($"User Id: {id}");
+            var user = _mapper.Map<CreateUserDto>(createUserModel);
+            user.Id = id;
+            await _userService.CreateNewUserAsync(id, user);
+            _logger.LogInformation("Created new user successfully");
+            return Ok(user.Id);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error creating new user");
+            return BadRequest(ex.Message);
+        }
     }
 
     /// <summary>

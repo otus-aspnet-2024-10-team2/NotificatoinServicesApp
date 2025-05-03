@@ -68,7 +68,7 @@ public class UserController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error creating new user");
-            return BadRequest(ex.Message);
+            return BadRequest($"Возникла ошибка при попытке сохранить информацию о пользователе: {ex.Message}");
         }
     }
 

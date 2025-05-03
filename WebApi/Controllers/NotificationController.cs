@@ -30,7 +30,7 @@ public class NotificationController : ControllerBase
     /// Получить произвольный ИД
     /// </summary>
     /// <returns></returns>
-    [HttpGet]
+    //[HttpGet]
     public async Task<IActionResult> CreateIdNotification()
     {
         _logger.LogInformation($"Вызов метода получения произвольного GUID уведомления");

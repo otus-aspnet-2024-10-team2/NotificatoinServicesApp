@@ -15,7 +15,7 @@ public enum NotificationType
     /// <summary>
     /// Месенджер
     /// </summary>
-    MESSANGER = 3,
+    MESSENGER = 3,
     /// <summary>
     /// Всеми типами рассылки
     /// </summary>

@@ -14,7 +14,8 @@ public class NotificationMappingProfile : Profile
             .ForMember(d => d.Id, map => map.Ignore())
             .ForMember(d => d.DateSended, m => m.Ignore())
             .ForMember(d => d.Sending, m => m.Ignore())
-            .ForMember(d=>d.IsDeleted, m=>m.Ignore());
+            .ForMember(d=>d.IsDeleted, m=>m.Ignore())
+            .ForMember(d=>d.TypeNotification, m => m.Ignore());
 
         CreateMap<UpdateNotificationDto, Notification>()
             .ForMember(d => d.Id, map => map.Ignore())

@@ -5,13 +5,13 @@ public enum NotificationStatus
     /// <summary>
     /// Новое
     /// </summary>
-    IsNew = 1,
+    IsNew,
     /// <summary>
     /// В работе
     /// </summary>
-    InProcess = 2,
+    InProcess,
     /// <summary>
     /// Завершено
     /// </summary>
-    IsCompleted = 3,
+    IsCompleted,
 }

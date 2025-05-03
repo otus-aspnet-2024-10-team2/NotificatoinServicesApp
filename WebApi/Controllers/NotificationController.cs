@@ -139,7 +139,9 @@ public class NotificationController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteNotification(Guid id)
     {
+        _logger.LogInformation($"Удаление уведомления № {id}");
         await _notificationService.DeleteNotificationAsync(id);
+        _logger.LogInformation("Уведомление удалено");
         return Ok();
     }
 
@@ -150,7 +152,9 @@ public class NotificationController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAllNotificationsAsync()
     {
+        _logger.LogInformation("Получение всех уведомлений из БД.");
         var notifications = await _notificationService.GetAllNotificationsAsync();
+        _logger.LogInformation($"Записи, в кол-ве:{notifications.Count} получены.");
         return Ok(notifications);
     }
 }

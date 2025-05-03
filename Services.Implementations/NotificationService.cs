@@ -52,7 +52,7 @@ public class NotificationService : INotificationService
     public async Task<Guid> CreateNewNotificationAsync(CreateNotificationDto createNotificationDto)
     {
         var notification = _mapper.Map<CreateNotificationDto, Notification>(createNotificationDto);
-        var n =  _service.Add(notification); 
+        var n =  await _service.AddAsync(notification); 
         await _service.SaveChangesAsync();
         return n.Id;
     }

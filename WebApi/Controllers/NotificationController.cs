@@ -26,18 +26,18 @@ public class NotificationController : ControllerBase
         _logger = logger;
     }
     
-    /// <summary>
-    /// Получить произвольный ИД
-    /// </summary>
-    /// <returns></returns>
-    //[HttpGet]
-    public async Task<IActionResult> CreateIdNotification()
-    {
-        _logger.LogInformation($"Вызов метода получения произвольного GUID уведомления");
-        var a = await _notificationService.GetDefaultIdAsync();
-        _logger.LogInformation($"Произвольный GUID: {a}");
-        return Ok(a);
-    }
+    // /// <summary>
+    // /// Получить произвольный ИД
+    // /// </summary>
+    // /// <returns></returns>
+    // //[HttpGet]
+    // public async Task<IActionResult> CreateIdNotification()
+    // {
+    //     _logger.LogInformation($"Вызов метода получения произвольного GUID уведомления");
+    //     var a = await _notificationService.GetDefaultIdAsync();
+    //     _logger.LogInformation($"Произвольный GUID: {a}");
+    //     return Ok(a);
+    // }
 
     /// <summary>
     /// Найти уведомление по ID

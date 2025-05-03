@@ -1,0 +1,11 @@
+﻿step 1: Generation migration
+    dotnet ef migrations add AddedStatus --startup-project .\WebApi\WebApi.csproj --project .\Infrastructure.EF\Infrastructure.EF.csproj --context DatabaseContext
+
+step 2: Update database
+    dotnet ef database update --startup-project .\WebApi\WebApi.csproj --project .\Infrastructure.EF\Infrastructure.EF.csproj --context DatabaseContext
+    
+step 3: Update database from migration
+    dotnet ef database update AddedStatus --startup-project .\WebApi\WebApi.csproj --project .\Infrastructure.EF\Infrastructure.EF.csproj --context DatabaseContext
+    
+step 1a: Rollback bad migration
+    dotnet ef migrations remove AddedStatus --startup-project .\WebApi\WebApi.csproj --project .\Infrastructure.EF\Infrastructure.EF.csproj --context DatabaseContext

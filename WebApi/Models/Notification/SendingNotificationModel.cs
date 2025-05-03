@@ -28,4 +28,8 @@ public class SendingNotificationModel
     /// Тип рассылки
     /// </summary>
     public NotificationType TypeNotification { get; set; }
+    /// <summary>
+    /// Статус уведомления
+    /// </summary>
+    public NotificationStatus Status { get; set; }
 }

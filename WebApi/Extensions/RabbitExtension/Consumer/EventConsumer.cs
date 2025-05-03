@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Core.Entity;
+using Core.Entity.Entities;
 using MassTransit;
 using Services.Contracts.Notification;
 

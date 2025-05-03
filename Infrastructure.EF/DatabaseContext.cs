@@ -1,4 +1,5 @@
 ﻿using Core.Entity;
+using Core.Entity.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 

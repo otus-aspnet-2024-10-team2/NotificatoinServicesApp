@@ -1,5 +1,6 @@
 using AutoMapper;
 using Core.Entity;
+using Core.Entity.Entities;
 using Services.Contracts.Users;
 
 namespace Services.Implementations.Mapping;

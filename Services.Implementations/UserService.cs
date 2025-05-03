@@ -1,5 +1,6 @@
 using AutoMapper;
 using Core.Entity;
+using Core.Entity.Entities;
 using Services.Abstractions;
 using Services.Contracts.Users;
 using Services.Repositories;

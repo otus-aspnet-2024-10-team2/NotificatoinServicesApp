@@ -1,4 +1,4 @@
-﻿namespace Core.Entity;
+﻿namespace Core.Entity.Entities;
 /// <summary>
 /// Тип рассылки
 /// </summary>

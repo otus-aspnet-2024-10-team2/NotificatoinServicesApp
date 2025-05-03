@@ -1,6 +1,7 @@
 using AutoFixture;
 using AutoFixture.AutoMoq;
 using Core.Entity;
+using Core.Entity.Entities;
 using FluentAssertions;
 using Infrastructure.Repositories.Implementations;
 using Microsoft.AspNetCore.Http.HttpResults;

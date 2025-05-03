@@ -1,6 +1,6 @@
 using Core.Entity.Base;
 
-namespace Core.Entity;
+namespace Core.Entity.Entities;
 /// <summary>
 /// Сущность, отвечающая за пользователей, которым надо рассылать уведомления
 /// </summary>

@@ -1,5 +1,6 @@
 ﻿using Core.Entity;
 using Core.Entity.Base;
+using Core.Entity.Entities;
 
 namespace Services.Contracts.Notification;
 

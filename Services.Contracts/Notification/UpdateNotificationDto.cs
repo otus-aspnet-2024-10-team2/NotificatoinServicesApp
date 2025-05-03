@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Core.Entity;
+using Core.Entity.Entities;
 
 namespace Services.Contracts.Notification;
 

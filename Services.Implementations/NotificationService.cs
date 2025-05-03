@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Core.Entity;
+using Core.Entity.Entities;
 using Core.Entity.Events;
 using MassTransit;
 using Services.Abstractions;

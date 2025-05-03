@@ -1,4 +1,5 @@
 ﻿using Core.Entity;
+using Core.Entity.Entities;
 using Services.Contracts.Notification;
 using Services.Contracts.NotificationDto;
 

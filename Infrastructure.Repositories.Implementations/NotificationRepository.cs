@@ -1,4 +1,5 @@
 ﻿using Core.Entity;
+using Core.Entity.Entities;
 using Infrastructure.EF;
 using Microsoft.EntityFrameworkCore;
 using Services.Repositories;

@@ -31,4 +31,6 @@ public class UpdateNotificationDto
     /// </summary>
     [Required(ErrorMessage = "Отсутствует тип рассылки")]
     public NotificationType TypeNotification { get; set; }
+    
+    public NotificationStatus Status { get; set; }
 }

@@ -47,4 +47,10 @@ public class Notification : IEntity<Guid>
     /// Признак удаления уведомления
     /// </summary>
     public bool IsDeleted { get; set; }
+    
+    /// <summary>
+    /// Статус уведомления
+    /// </summary>
+    [Column("Status", TypeName="int")]
+    public NotificationStatus Status { get; set; }
 }

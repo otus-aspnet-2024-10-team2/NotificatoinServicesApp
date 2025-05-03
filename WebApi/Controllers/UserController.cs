@@ -46,7 +46,7 @@ public class UserController : ControllerBase
     /// Создать нового пользователя
     /// </summary>
     /// <param name="id"></param>
-    /// <param name="createUserModel">Модель новго пользователя</param>
+    /// <param name="createUserModel">Модель нового пользователя</param>
     /// <returns></returns>
     [HttpPost]
     public async Task<IActionResult> CreateNewUserAsync(CreateUserModel createUserModel)

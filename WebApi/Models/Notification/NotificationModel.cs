@@ -32,4 +32,6 @@ public class NotificationModel
     /// Тип рассылки
     /// </summary>
     public NotificationType TypeNotification { get; set; }
+    
+    public NotificationStatus Status {get; set; }
 }

@@ -7,21 +7,21 @@ public enum NotificationType
     /// <summary>
     /// Электронная почта
     /// </summary>
-    EMAIL = 1,
+    Email,
     /// <summary>
     /// СМС
     /// </summary>
-    SMS = 2,
+    Sms,
     /// <summary>
     /// Месенджер
     /// </summary>
-    MESSENGER = 3,
+    Messenger,
     /// <summary>
     /// Всеми типами рассылки
     /// </summary>
-    ALL = 4,
+    All,
     /// <summary>
     /// Ничего не получать
     /// </summary>
-    NO_WAY = 5
+    NoWay
 }

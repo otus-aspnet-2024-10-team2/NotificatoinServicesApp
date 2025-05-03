@@ -147,7 +147,7 @@ public class NotificationController : ControllerBase
     /// Получить все уведомления
     /// </summary>
     /// <returns></returns>
-    [HttpGet("list")]
+    [HttpGet]
     public async Task<IActionResult> GetAllNotificationsAsync()
     {
         var notifications = await _notificationService.GetAllNotificationsAsync();

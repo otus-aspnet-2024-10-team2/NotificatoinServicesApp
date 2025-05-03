@@ -70,7 +70,7 @@ public class NotificationController : ControllerBase
         try
         {
             _logger.LogInformation("Начало процесса создания уведомления.");
-            var notification = _mapper.Map<CreateNotificationDto>(notificationModel);
+            var notification = _mapper.Map<CreatingNotificationModel, CreateNotificationDto>(notificationModel);
             notification.Id = await _notificationService.GetDefaultIdAsync();
             notificationModel.Id = notification.Id;
             var a = await _notificationService.CreateNewNotificationAsync(notification);

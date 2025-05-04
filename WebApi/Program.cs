@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text.Json.Serialization;
 using Core.Entity;
 using Infrastructure.EF;
 using Infrastructure.Repositories.Implementations;
@@ -23,7 +24,11 @@ public class Program
         var services = builder.Services;
         //added mediatR
         services.AddMediatR(Assembly.GetExecutingAssembly());
-        services.AddControllers();
+        services.AddControllers()
+            .AddJsonOptions(o =>
+            {
+                o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
         
         //найтрока automapper'a
         services.InstallAutomapper();

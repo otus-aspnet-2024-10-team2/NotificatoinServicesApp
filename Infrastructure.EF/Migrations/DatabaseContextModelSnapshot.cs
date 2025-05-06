@@ -32,6 +32,11 @@ namespace Infrastructure.EF.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("Id");
 
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("City");
+
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("date")
                         .HasColumnName("DateCreated");
@@ -45,8 +50,18 @@ namespace Infrastructure.EF.Migrations
                         .HasColumnType("text")
                         .HasColumnName("Description");
 
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("FullName");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("PhoneNumber");
 
                     b.Property<bool>("Sending")
                         .HasColumnType("boolean")

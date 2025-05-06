@@ -27,7 +27,10 @@ public class NotificationMappingProfile : Profile
         CreateMap<SendNotificationDto, Notification>()
             .ForMember(d => d.Id, m => m.Ignore())
             .ForMember(d => d.DateCreated, m => m.Ignore())
-            .ForMember(d=>d.IsDeleted, m=>m.Ignore());
+            .ForMember(d=>d.IsDeleted, m=>m.Ignore())
+            .ForMember(d=>d.FullName, m=> m.Ignore())
+            .ForMember(d=>d.PhoneNumber, m=> m.Ignore())
+            .ForMember(d=>d.City, m=> m.Ignore());
 
     }
 }

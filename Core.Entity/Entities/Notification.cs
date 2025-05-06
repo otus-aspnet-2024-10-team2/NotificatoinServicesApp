@@ -51,4 +51,22 @@ public class Notification : IEntity<Guid>
     /// </summary>
     [Column("Status", TypeName="int")]
     public NotificationStatus Status { get; set; }
+    
+    /// <summary>
+    /// ФИО автора сообщения
+    /// </summary>
+    [Column("FullName", TypeName = "text")]
+    public string FullName { get; set; }
+    
+    /// <summary>
+    /// Город
+    /// </summary>
+    [Column("City", TypeName = "text")]
+    public string City {get; set;}
+    
+    /// <summary>
+    /// Номер телефона
+    /// </summary>
+    [Column("PhoneNumber", TypeName = "text")]
+    public string PhoneNumber { get; set; }
 }

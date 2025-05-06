@@ -36,4 +36,19 @@ public class NotificationDto : IEntity<Guid>
     public NotificationType TypeNotification { get; set; }
     
     public NotificationStatus Status { get; set; }
+    
+    /// <summary>
+    /// ФИО автора сообщения
+    /// </summary>
+    public string FullName { get; set; }
+    
+    /// <summary>
+    /// Город
+    /// </summary>
+    public string City {get; set;}
+    
+    /// <summary>
+    /// Номер телефона
+    /// </summary>
+    public string PhoneNumber { get; set; }
 }

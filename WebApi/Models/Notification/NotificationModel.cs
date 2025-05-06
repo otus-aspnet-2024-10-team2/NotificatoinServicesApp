@@ -1,4 +1,5 @@
-﻿using Core.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using Core.Entity;
 using Core.Entity.Entities;
 
 namespace WebApi.Models.Notification;
@@ -20,6 +21,7 @@ public class NotificationModel
     /// <summary>
     /// Дата создания, по умолчанию - текущая дата
     /// </summary>
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
     public DateTime DateCreated { get; set; } = DateTime.Now;
     /// <summary>
     /// Дата рассылки

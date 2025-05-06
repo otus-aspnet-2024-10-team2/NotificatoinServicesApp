@@ -51,6 +51,7 @@ public class NotificationController : ControllerBase
         if (notification is not null)
         {
             _logger.LogInformation("Уведомление успешно найдено");
+            _logger.LogInformation($"GUID:{notification.Id}\nType Notification: {notification.TypeNotification}");
             return Ok(_mapper.Map<NotificationModel>(notification));
         }
         else

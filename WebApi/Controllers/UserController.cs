@@ -23,15 +23,15 @@ public class UserController : ControllerBase
         _logger = logger;
     }
 
-    /// <summary>
-    /// Получить произвольный ИД пользователя
-    /// </summary>
-    /// <returns></returns>
-    [HttpGet(Name = "Get")]    
-    public async Task<IActionResult> GetRandomUserId()
-    {
-        return Ok(await _userService.GetRandomUserId());
-    }
+    // /// <summary>
+    // /// Получить произвольный ИД пользователя
+    // /// </summary>
+    // /// <returns></returns>
+    // [HttpGet(Name = "Get")]    
+    // public async Task<IActionResult> GetRandomUserId()
+    // {
+    //     return Ok(await _userService.GetRandomUserId());
+    // }
     
     /// <summary>
     /// Получить информацию по пользователю
@@ -59,7 +59,7 @@ public class UserController : ControllerBase
             _logger.LogInformation("Creating new user");
             var id = await _userService.GetRandomUserId();
             _logger.LogInformation($"User Id: {id}");
-            var user = _mapper.Map<CreateUserDto>(createUserModel);
+            var user = _mapper.Map< CreateUserModel,CreateUserDto>(createUserModel);
             user.Id = id;
             await _userService.CreateNewUserAsync(id, user);
             _logger.LogInformation("Created new user successfully");

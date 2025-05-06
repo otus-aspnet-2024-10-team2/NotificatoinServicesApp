@@ -1,4 +1,5 @@
 using AutoMapper;
+using Core.Entity.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Services.Abstractions;
 using Services.Contracts.Users;
@@ -68,7 +69,10 @@ public class UserController : ControllerBase
             d.DateCreated = createUserModel.DateCreated;
             d.Name = createUserModel.Name;
             d.UserType = createUserModel.UserType;
-            
+            d.NotificationTypes = new List<NotificationType>()
+            {
+                NotificationType.Email
+            };
             //var user = _mapper.Map<CreateUserDto>(createUserModel);
             
             _logger.LogInformation("Начало процесса записи в БД");

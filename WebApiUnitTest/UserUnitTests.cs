@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using AutoFixture;
 using AutoFixture.AutoMoq;
 using Core.Entity;
@@ -33,7 +34,7 @@ public class UserUnitTests
     [Fact]
     public async Task GetUserIsEmptyNotFound()
     {
-        //Arrang
+        //Arrange
         var id = new Random().Next(1,1000);
         User u = null;
         
@@ -43,5 +44,46 @@ public class UserUnitTests
         
         //Assert
         user.Should().BeAssignableTo<OkObjectResult>();
+    }
+
+    public static IEnumerable<object[]> CreateUserModelData()
+    {
+        var models = new List<object[]>
+        {
+            new object[]
+            {
+                new CreateUserModel()
+                {
+                    Id = 0,
+                    Name = "string",
+                    Email = "string",
+                    PhoneNumber = "string",
+                    City = "string",
+                    IsActiveUser = true,
+                    NotificationTypes = new List<NotificationType>()
+                    {
+                        NotificationType.Email,
+                    },
+                    DateCreated = DateTime.Now,
+                    UserType = UserType.Administrator
+                },
+            }
+        };
+        return models;
+    }
+
+    [Theory]
+    [MemberData(nameof(CreateUserModelData))]
+    public async Task Create_New_User(CreateUserModel createUserModel)
+    {
+        //Arrange
+        var model = createUserModel;
+        
+        //Act
+        var result = _userController.CreateNewUserAsync(model).Result;
+        
+        //Assert
+        result.Should().NotBeNull();
+        result.Should().BeAssignableTo<OkObjectResult>();
     }
 }

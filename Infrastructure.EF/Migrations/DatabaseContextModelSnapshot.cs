@@ -25,7 +25,7 @@ namespace Infrastructure.EF.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Core.Entity.Notification", b =>
+            modelBuilder.Entity("Core.Entity.Entities.Notification", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -70,44 +70,48 @@ namespace Infrastructure.EF.Migrations
                     b.ToTable("Notifications");
                 });
 
-            modelBuilder.Entity("Core.Entity.User", b =>
+            modelBuilder.Entity("Core.Entity.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("integer")
+                        .HasColumnName("Id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("City")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("City");
 
                     b.Property<DateTime>("DateCreated")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("date")
+                        .HasColumnName("DateCreated");
 
                     b.Property<string>("Email")
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("Email");
 
                     b.Property<bool>("IsActiveUser")
                         .HasColumnType("boolean");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
-
-                    b.PrimitiveCollection<int[]>("NotificationTypes")
                         .IsRequired()
-                        .HasColumnType("integer[]");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)")
+                        .HasColumnName("Name");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("PhoneNumber");
 
                     b.Property<string>("SecondName")
                         .HasColumnType("text");
 
                     b.Property<int>("UserType")
-                        .HasColumnType("integer");
+                        .HasColumnType("int")
+                        .HasColumnName("UserType");
 
                     b.HasKey("Id");
 

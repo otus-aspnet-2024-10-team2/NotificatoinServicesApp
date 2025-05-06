@@ -59,15 +59,26 @@ public class UserController : ControllerBase
             _logger.LogInformation("Creating new user");
             var id = await _userService.GetRandomUserId();
             _logger.LogInformation($"User Id: {id}");
-            var user = _mapper.Map< CreateUserModel,CreateUserDto>(createUserModel);
-            user.Id = id;
-            await _userService.CreateNewUserAsync(id, user);
+            createUserModel.Id = id;
+            CreateUserDto d = new CreateUserDto();
+            d.Id = id;
+            d.City = createUserModel.City;
+            d.PhoneNumber = createUserModel.PhoneNumber;
+            d.Email = createUserModel.Email;
+            d.DateCreated = createUserModel.DateCreated;
+            d.Name = createUserModel.Name;
+            d.UserType = createUserModel.UserType;
+            
+            //var user = _mapper.Map<CreateUserDto>(createUserModel);
+            
+            _logger.LogInformation("Начало процесса записи в БД");
+            await _userService.CreateNewUserAsync(id, d);
             _logger.LogInformation("Created new user successfully");
-            return Ok(user.Id);
+            return Ok(d.Id);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error creating new user");
+            _logger.LogError(ex, $"Error creating new user. {ex.StackTrace}\n{ex.InnerException?.Message}");
             return BadRequest($"Возникла ошибка при попытке сохранить информацию о пользователе: {ex.Message}");
         }
     }

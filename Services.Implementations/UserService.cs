@@ -49,10 +49,28 @@ public class UserService : IUserService
     /// <returns></returns>
     public async Task<int> CreateNewUserAsync(int userId, CreateUserDto createUserDto)
     {
-        var mapUser = _mapper.Map<CreateUserDto, User>(createUserDto);
-        var user = await _repository.AddAsync(mapUser);
-        await _repository.SaveChangesAsync();
-        return user.Id;
+        // var mapUser = _mapper.Map<CreateUserDto, User>(createUserDto);
+        var mapUser = new User();
+        mapUser.Email = createUserDto.Email;
+        mapUser.DateCreated = createUserDto.DateCreated;
+        mapUser.UserType = createUserDto.UserType;
+        mapUser.IsActiveUser = createUserDto.IsActiveUser;
+        mapUser.Name = createUserDto.Name;
+        mapUser.City = createUserDto.City;
+        mapUser.Email = createUserDto.Email;
+        mapUser.Id = createUserDto.Id;
+        mapUser.PhoneNumber = createUserDto.PhoneNumber;
+        mapUser.NotificationTypes = createUserDto.NotificationTypes;
+        if (mapUser != null)
+        {
+            var user = await _repository.AddAsync(mapUser);
+            await _repository.SaveChangesAsync();
+            return user.Id;
+        }
+        else
+        {
+            throw new Exception($"Произошла ошибка при маппинге");
+        }
     }
 
     /// <summary>
@@ -71,7 +89,7 @@ public class UserService : IUserService
         userUpd.City = updateUserDto.City;
         userUpd.IsActiveUser = updateUserDto.IsActiveUser;
         userUpd.UserType = updateUserDto.UserType;
-        userUpd.NotificationTypes = updateUserDto.NotificationTypes;
+        // userUpd.NotificationTypes = updateUserDto.NotificationTypes;
         userUpd.Name = updateUserDto.Name;
         userUpd.SecondName = updateUserDto.SecondName;
         userUpd.Email = updateUserDto.Email;

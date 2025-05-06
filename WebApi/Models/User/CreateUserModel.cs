@@ -13,10 +13,10 @@ public class CreateUserModel
     /// Имя пользователя
     /// </summary>
     public string? Name { get; set; }
-    /// <summary>
-    /// Фамилия
-    /// </summary>
-    public string? SecondName { get; set; }
+    // /// <summary>
+    // /// Фамилия
+    // /// </summary>
+    // public string? SecondName { get; set; }
     /// <summary>
     /// Город
     /// </summary>
@@ -29,9 +29,9 @@ public class CreateUserModel
     /// Е-Mail
     /// </summary>
     public string? Email { get; set; }
-    /// <summary>
-    /// Как получать рассылку
-    /// </summary>
+     /// <summary>
+     /// Как получать рассылку
+     /// </summary>
     public IEnumerable<NotificationType> NotificationTypes { get; set; }
     /// <summary>
     /// Дата создания записи

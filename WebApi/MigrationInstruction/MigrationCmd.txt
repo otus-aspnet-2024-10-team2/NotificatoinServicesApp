@@ -9,3 +9,6 @@ step 3: Update database from migration
     
 step 1a: Rollback bad migration
     dotnet ef migrations remove AddedStatus --startup-project .\WebApi\WebApi.csproj --project .\Infrastructure.EF\Infrastructure.EF.csproj --context DatabaseContext
+    
+P.S.
+    AddedStatus - произвольное имя. Надо указать свое, при создании миграции
